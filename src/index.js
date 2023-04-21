@@ -2,12 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('menu')
   const close = document.getElementById('close')
   const sidebar = document.getElementsByClassName('sidebar')
-  const select = document.getElementById('kelas')
-  const btnEdit = document.querySelectorAll('#btn-edit-siswa')
-  const modalEditInput = document.querySelector('#editSiswa input')
-  const modalEditForm = document.querySelector('#editSiswa form')
-  const btnDelete = document.querySelectorAll('#btn-hapus-siswa')
-  const modalDeleteAnchor = document.querySelector('#hapusSiswa a')
+  const btnEdit = document.querySelectorAll('#editGuruBtn')
+  const modalEditForm = document.getElementById('formEditGuru')
+
   
   menu.addEventListener('click',()=>{
     sidebar[0].classList.toggle('open')
@@ -17,22 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebar[0].classList.remove('open')
   })
 
-  select.addEventListener('change',()=>{
-    const id = select.value;
-    window.location = 'kelas.php?id=' + id
-  })
-
   btnEdit.forEach(btn=>{
     btn.addEventListener('click', ()=>{
-      modalEditInput.value = btn.dataset.nama
-      modalEditForm.action = `./controllers/editSiswa.php?id=${btn.dataset.id}`
+      const data = JSON.parse(btn.dataset.guru)
+      modalEditForm['nama'].value = data.nama
+      modalEditForm['nip'].value = data.nip
+      modalEditForm['jabatan'].value = data.jabatan
+      modalEditForm['username'].value = data.username
+      modalEditForm['password'].value = data.password
+      modalEditForm[6].value = data.isAdmin
+      modalEditForm[6].checked = data.isAdmin > 0 ? true : false
+      modalEditForm.action = `./controllers/editGuru.php?id=${data.id}`
     })
   })
 
-  btnDelete.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      modalDeleteAnchor.href = `./controllers/hapusSiswa.php?id=${btn.dataset.id}`
-    })
-  })
+
+
 
 })

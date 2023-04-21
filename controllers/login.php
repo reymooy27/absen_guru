@@ -20,7 +20,7 @@
         $_SESSION['user-id'] = $user['id'];
         if($user['isAdmin'] > 0){
           $_SESSION['is-admin'] = true;
-          header('Location: ../dashboard.php');
+          header('Location: ../index.php');
           exit();
         }
         header('Location: ../index.php');

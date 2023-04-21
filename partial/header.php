@@ -33,7 +33,7 @@
 <body>
   <div class="full-width">
     <div class="sidebar">
-      <div class="sidebar-wraper">
+      <div class="sidebar-wraper gap-3">
         <img src="src/images/iconmonstr-x-mark-lined-240.png" alt="close" id='close'/>
         <a href="index.php">Dashboard</a>
         <a href="absen.php">Absen</a>
@@ -53,7 +53,7 @@
           <div class="btn-group">
             <button class='avatar-container bg-transparent btn border-0 dropdown-toggle' data-bs-toggle="dropdown" aria-expanded="false">
               <div class='avatar'>
-                <img src="src/images/iconmonstr-user-19-240.png" alt="user"/>
+                <img src="<?= $user['image'] ?? 'src/images/iconmonstr-user-19-240.png'?>" style="object-fit: cover; height: 100%; width: 100%;" alt="user"/>
               </div>
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
