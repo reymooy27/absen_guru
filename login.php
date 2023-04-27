@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: auto;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +14,10 @@
   <script src='./src/index.js'></script>
   <script src='./bootstrap/js/bootstrap.bundle.js'></script>
 </head>
-<body>
-  <div class="container p-3">
-    <h1 class="text-center">Log In</h1>
+<body class="login-page" style="overflow: auto;">
+  <div class="container mt-3 p-3 d-flex flex-column align-items-center rounded-2 shadow-lg bg-blur">
+    <img src="src/images/logo.png" style="width: 100px; height: 100px;" alt="">
+    <h4 class="text-center mt-3 shadow-2">Absensi SMA Negeri 1 Amanuban Selatan</h4>
     <?php if(isset($_SESSION['login-error'])):?>
       <span style="color: red;"><?= $_SESSION['login-error']; unset($_SESSION['login-error'])?></span>
     <?php endif?>

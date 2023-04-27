@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnEdit = document.querySelectorAll('#editGuruBtn')
   const modalEditForm = document.getElementById('formEditGuru')
 
-  
+
   menu.addEventListener('click',()=>{
     sidebar[0].classList.toggle('open')
   })

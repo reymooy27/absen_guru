@@ -132,7 +132,37 @@ a{
   cursor: pointer;
 }
 
+.login-page{
+  background: url('images/bg-3.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-blur{
+  backdrop-filter: blur(4px);
+  background-color: #e2e8f03e;
+  width: 95%;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.544);
+}
+
+/* .carousel-item > img{
+  object-fit: cover;
+  max-height: 200px;
+} */
+
+
 @media only screen and (min-width: 600px) {
+
+  .carousel-item > img{
+    max-height: 100%;
+  }
+
+  .bg-blur{
+    width: 400px;
+  }
+
   .wraper{
     left: 200px;
     width: calc(100% - 200px);
